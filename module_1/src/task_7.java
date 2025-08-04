@@ -7,26 +7,20 @@ public class task_7 {
         System.out.print("Введите вашу сумму: ");
         Scanner input = new Scanner(System.in);
         int moneyInRub = input.nextInt();
-
         int lastDigit = moneyInRub % 10;
-        switch(lastDigit) {
+        int tensNumber = moneyInRub % 100;
 
-            case 0:
-            case 5:
-            case 6:
-            case 7:
-            case 8:
-            case 9:
-                System.out.printf("у вас %d рублей" , moneyInRub);
-                break;
-            case 1:
-                System.out.printf("у вас %d рубль" , moneyInRub);
-                break;
-            case 2:
-            case 3:
-            case 4:
-                System.out.printf("у вас %d рубля" , moneyInRub);
+        if ((lastDigit == 0) || (5 <= lastDigit && lastDigit <= 9) || (10 <= tensNumber &&  tensNumber <= 20)) {
+            System.out.printf("у вас %d рублей", moneyInRub );
+        }
+        else if (lastDigit == 1) {
+            System.out.printf("у вас %d рубль", moneyInRub );
+        }
+        else if ( 2 <= lastDigit && lastDigit <= 4 ) {
+            System.out.printf("у вас %d рубля", moneyInRub );
         }
     }
 }
 //здесь в целом идея решения не сложная, надо только учесть, что в зависисмотсти от десятков также меняется окончание
+//тоесть надо учесть, что числа приставка для чисел от 10 включительно и до 20 также будет иметь также только рублей.
+//в разы резоннее напсиать в таком случае уже через диапазаоны, нежели импользовать конструкцию switch case.
