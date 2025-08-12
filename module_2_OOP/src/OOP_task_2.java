@@ -10,16 +10,13 @@ public class OOP_task_2 {
 
         while(true) {
             System.out.print("Хотите добавить сотрудника? (y/n): ");
-            String userChoice = input.nextLine().trim().toLowerCase();
-
+            String userChoice = input.nextLine();
             if (userChoice.equals("n")) {
                 break;
             }
-            // Создаем нового сотрудника
             new EmployeeWorkingHours(input);
         }
 
-        // Выводим информацию о всех сотрудниках
         EmployeeWorkingHours.displayAllEmployeesInfo();
         input.close();
     }
@@ -47,7 +44,7 @@ class EmployeeWorkingHours {
         System.out.println("___________________________________________________");
 
         for (EmployeeWorkingHours emp : allemploye) {
-            double tax = emp.amountEarned * 0.13; // Пример расчета налога 13%
+            double tax = emp.amountEarned * 0.15;
             double netSalary = emp.amountEarned - tax;
 
             System.out.printf("| %-7s | %13.2f | %9.2f | %12.2f |\n",
