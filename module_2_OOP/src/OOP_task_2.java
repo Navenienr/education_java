@@ -22,7 +22,7 @@ public class OOP_task_2 {
     }
 }
 
-class EmployeeWorkingHours {
+class  EmployeeWorkingHours {
     private static List<EmployeeWorkingHours> allemploye = new ArrayList<>();
     private String name;
     private double amountEarned;
